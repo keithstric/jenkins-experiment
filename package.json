@@ -5,7 +5,7 @@
   "private": false,
   "license": "UNLICENSED",
   "scripts": {
-    "bump-version:patch": "npm version --git-tag-version false --commit-hooks false patch",
+    "bump-version:patch": "npm version --git-tag-version false --commit-hooks false patch"
   },
   "dependencies": {
     "uuid": "^9.0.0",
