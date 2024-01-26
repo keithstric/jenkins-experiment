@@ -19,7 +19,7 @@ pipeline {
                 }
             }
         }
-        stage('Build and bump version') {
+        stage('Bump version') {
             steps {
                 echo 'Starting the build...'
                 sh 'npm run bump-version:patch'
@@ -38,18 +38,16 @@ pipeline {
                         git config --global credential.helper '!f() { echo password=$GITHUB_PW; }; f'
                         git config --global user.name 'Jenkins'
                         git config --global user.email 'keithstric@gmail.com'
-                        git add package.json
+                        git add ./package.json
                         git commit -m 'Jenkins - updated build version to ${newVersion}'
-                        git tag -f ${newVersionTag}
-                        git push https://${env.GITHUB_USER}:${env.GITHUB_PW}@${repoUrlPath}
-                        git push -f https://${env.GITHUB_USER}:${env.GITHUB_PW}@${repoUrlPath} --tags
+                        git push
                     """
                 }
             }
         }
-        stage('Cleanup Local Docker Image and Jenkins environment') {
+        stage('Cleanup Local Jenkins environment') {
             steps {
-                echo 'Cleaning up docker images and environment variables'
+                echo 'Cleaning up environment variables'
                 script {
                     version = ''
                     newVersion = ''
