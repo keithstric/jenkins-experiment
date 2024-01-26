@@ -1,4 +1,4 @@
-pipeline {
+pipeline { 
     agent any
     tools {nodejs "Node 21.6"}
     environment {
