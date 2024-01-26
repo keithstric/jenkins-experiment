@@ -1,4 +1,4 @@
-pipeline { 
+pipeline {
     agent any
     tools {nodejs "Node 21.6"}
     environment {
@@ -40,7 +40,7 @@ pipeline {
                         git config --global user.email 'keithstric@gmail.com'
                         git add ./package.json
                         git commit -m 'Jenkins - updated build version to ${newVersion}'
-                        git push
+                        git push --set-upstream origin main
                     """
                 }
             }
