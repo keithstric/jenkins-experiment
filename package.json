@@ -1,0 +1,12 @@
+{
+  "name": "jenkins-experiment",
+  "version": "1.0.0",
+  "author": "Keith Strickland",
+  "private": false,
+  "license": "UNLICENSED",
+  "scripts": {},
+  "dependencies": {
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {},
+}
