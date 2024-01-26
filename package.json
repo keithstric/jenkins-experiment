@@ -4,9 +4,12 @@
   "author": "Keith Strickland",
   "private": false,
   "license": "UNLICENSED",
-  "scripts": {},
+  "scripts": {
+    "bump-version:patch": "npm version --git-tag-version false --commit-hooks false patch",
+  },
   "dependencies": {
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "rimraf": "^5.0.5"
   },
   "devDependencies": {},
 }
